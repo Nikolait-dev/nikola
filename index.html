@@ -24,7 +24,6 @@
       position: relative;
     }
 
-    /* Tamni sloj preko slike radi čitljivosti */
     body::before {
       content: "";
       position: fixed;
@@ -78,7 +77,7 @@
       padding: 25px;
       border-radius: 15px;
       box-shadow: 0 8px 25px var(--shadow);
-      max-width: 800px;
+      max-width: 850px;
       text-align: justify;
       line-height: 1.6;
       transition: transform 0.3s;
@@ -94,32 +93,18 @@
       color: #ffffff;
     }
 
-    #projects .project-list {
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
+    ul {
+      list-style-type: "✔ ";
+      padding-left: 20px;
     }
 
-    .project-item {
-      background: rgba(255, 255, 255, 0.1);
-      padding: 10px 15px;
-      border-radius: 10px;
-      text-align: left;
+    .info-line {
+      margin: 5px 0;
     }
 
-    #contact button {
-      background: var(--accent);
-      color: white;
-      border: none;
-      padding: 10px 18px;
-      border-radius: 8px;
-      font-weight: bold;
-      cursor: pointer;
-      transition: background 0.3s;
-    }
-
-    #contact button:hover {
-      background: #0077cc;
+    .highlight {
+      color: var(--accent);
+      font-weight: 600;
     }
 
     footer {
@@ -132,10 +117,33 @@
       z-index: 3;
     }
 
+    .about-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 30px;
+    }
+
+    .about-img {
+      border-radius: 50%;
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+      box-shadow: 0 0 20px rgba(0,0,0,0.5);
+      border: 3px solid var(--accent);
+    }
+
+    .cert-list {
+      list-style-type: "🎖 ";
+      padding-left: 20px;
+    }
+
     @media (max-width: 600px) {
       nav { flex-wrap: wrap; gap: 10px; }
       section { padding: 100px 15px; }
       .card { padding: 20px; }
+      .about-grid { flex-direction: column; text-align: center; }
     }
   </style>
 </head>
@@ -145,63 +153,98 @@
     <nav>
       <a href="#about">O meni</a>
       <a href="#experience">Iskustvo</a>
-      <a href="#projects">Projekti</a>
+      <a href="#skills">Veštine</a>
+      <a href="#education">Obrazovanje</a>
+      <a href="#certificates">Certifikati</a>
       <a href="#contact">Kontakt</a>
     </nav>
   </header>
 
+  <!-- O MENI -->
   <section id="about">
     <div class="card">
-      <h1>👋 Zdravo, ja sam Nikola</h1>
-      <p>
-        Iskusni tehničar sa bogatim iskustvom u oblasti mašinske i industrijske inženjerije.
-        Pružam tehničku podršku za KONE i non-KONE opremu kroz sistem Tehničkog Help Deska (THD),
-        kako na daljinu, tako i na terenu, u zavisnosti od potrebe.
-      </p>
-      <p>
-        Moje veštine obuhvataju SQL programiranje i administraciju, Microsoft Office, XML, HTML,
-        razvoj softvera, Microsoft Data Access tehnologije, kao i razvoj web aplikacija (ASP.NET MVC).
-        Takođe, poznajem rad sa Vue.js okvirom. Diplomirao sam na ITAcademy, smer informacionih tehnologija.
-      </p>
-    </div>
-  </section>
-
-  <section id="experience">
-    <div class="card">
-      <h2>⚙️ Tehničko iskustvo</h2>
-      <p>
-        Radim na podešavanju KONE sistema za integraciju svih jedinica u okviru DCS objekata.
-        Uključeno je programiranje profila prava pristupa u KONE Access sistemu, ažuriranje verzija
-        softvera na CPUC i drugim mrežnim kontrolerima, povezivanje uređaja na IoT mrežu i
-        integracija alarma sa call centrom, kao i programiranje uređaja za pozivanje.
-      </p>
-      <p>
-        Fokusiran sam na preciznost, pouzdanost i efikasno rešavanje tehničkih problema, sa ciljem
-        da sistemi funkcionišu stabilno i bez zastoja.
-      </p>
-    </div>
-  </section>
-
-  <section id="projects">
-    <div class="card">
-      <h2>🏗️ Projekti</h2>
-      <div class="project-list">
-        <div class="project-item"><strong>Skyline C</strong> — Integracija sistema i konfiguracija pristupa</div>
-        <div class="project-item"><strong>BW Kula</strong> — IoT povezivanje i sistemska podešavanja</div>
-        <div class="project-item"><strong>West Kula</strong> — Programiranje uređaja i integracija alarma</div>
-        <div class="project-item"><strong>Galerija</strong> — Softverske verzije i mrežni kontroleri</div>
+      <div class="about-grid">
+        <img src="https://cdn-icons-png.flaticon.com/512/1999/1999625.png" alt="Nikola" class="about-img" />
+        <div>
+          <h1>👋 Zdravo, ja sam Nikola</h1>
+          <p>
+            Iskusni tehničar sa istorijom rada u oblasti mehaničkog i industrijskog inženjerstva. 
+            Pružam tehničku podršku za KONE i non-KONE opremu kroz sistem Tehničkog Help Deska (THD),
+            sa mogućnošću udaljene i terenske asistencije.
+          </p>
+          <p>
+            Stručan u SQL programiranju i administraciji, XML-u, HTML-u, ASP.NET MVC, Microsoft Data Access tehnologijama i razvoju web aplikacija.
+            Takođe poznajem Vue.js, razvoj interfejsa i automatizaciju procesa kroz IoT povezivanje.
+          </p>
+        </div>
       </div>
     </div>
   </section>
 
+  <!-- ISKUSTVO -->
+  <section id="experience">
+    <div class="card">
+      <h2>⚙️ Tehničko iskustvo</h2>
+      <p>
+        Podešavanje i integracija KONE sistema u DCS objektima, programiranje prava pristupa u KONE Access,
+        ažuriranje verzija softvera na CPUC i mrežnim kontrolerima, kao i IoT integracija i povezivanje
+        alarma sa call centrom.
+      </p>
+      <p>
+        Projekti: Skyline C, BW Kula, West Kula, Galerija Beograd.
+      </p>
+    </div>
+  </section>
+
+  <!-- VEŠTINE -->
+  <section id="skills">
+    <div class="card">
+      <h2>💡 Veštine</h2>
+      <ul>
+        <li>Computer Networking</li>
+        <li>Cloud Connections</li>
+        <li>Digital Support</li>
+        <li>Technical Support</li>
+        <li>Critical Thinking</li>
+        <li>Communication Skills</li>
+        <li>Teamwork and Collaboration</li>
+        <li>IT Academy</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- OBRAZOVANJE -->
+  <section id="education">
+    <div class="card">
+      <h2>🎓 Obrazovanje</h2>
+      <p class="info-line"><strong>Fakultet tehničkih nauka u Beogradu</strong> — Škola za elektrotehniku i računarstvo primenjenih studija</p>
+      <p class="info-line">Uspešno završeno 2013. godine</p>
+      <p class="info-line">Predmeti i tehnologije: <span class="highlight">Visual Basic, C++, SQL, HTML, CSS</span></p>
+      <p class="info-line">Lokacija: Batajnica, Zemun</p>
+    </div>
+  </section>
+
+  <!-- CERTIFIKATI -->
+  <section id="certificates">
+    <div class="card">
+      <h2>🎖️ Certifikati</h2>
+      <ul class="cert-list">
+        <li>ITAcademy — Diploma iz oblasti informacionih tehnologija</li>
+        <li>KONE System Integration — Napredno podešavanje DCS i Access sistema</li>
+        <li>Microsoft Office Specialist</li>
+        <li>Web Development Essentials — HTML, CSS, JavaScript, ASP.NET MVC</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- KONTAKT -->
   <section id="contact">
     <div class="card">
-      <h2>✉️ Kontakt</h2>
-      <p>
-        Ukoliko želiš da me kontaktiraš, predložiš saradnju ili postaviš pitanje, slobodno mi piši putem e-maila:
-      </p>
-      <p><strong>nik6l4192@gmail.com</strong></p>
-      <button onclick="window.location.href='mailto:nikola@example.com'">Pošalji poruku</button>
+      <h2>📞 Kontakt</h2>
+      <p>Otvoren sam za nove projekte, saradnje i tehničke izazove.</p>
+      <p><strong>Telefon:</strong> <a href="tel:+381612832335" style="color:#00aaff;">+381 61 283 2335</a></p>
+      <p><strong>E-mail:</strong> <a href="mailto:nik6l4192@gmail.com" style="color:#00aaff;">nik6l4192@gmail.com</a></p>
+      <p><strong>Lokacija:</strong> Batajnica, Zemun</p>
     </div>
   </section>
 
@@ -210,7 +253,6 @@
   </footer>
 
   <script>
-    // Glatko skrolovanje ka sekcijama
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function (e) {
         e.preventDefault();
@@ -222,3 +264,5 @@
   </script>
 </body>
 </html>
+
+

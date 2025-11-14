@@ -264,19 +264,27 @@
       <p><strong>E-mail:</strong> <a href="mailto:nik6l4192@gmail.com" style="color:#00aaff;">nik6l4192@gmail.com</a></p>
       <p><strong>Lokacija:</strong> Batajnica, Zemun</p>
       <a href="https://Nikolait-dev.github.io/nikola/cv-nikola.pdf" 
-   download 
+   download
    style="
       background:#00aaff;
-      padding:12px 22px;
       color:white;
+      padding:12px 25px;
       border-radius:8px;
       text-decoration:none;
       font-weight:600;
-      display:inline-block;
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      transition: background 0.3s, transform 0.2s;
       margin-top:15px;
-   ">
-⬇ Preuzmi moj CV (PDF)
+   "
+   onmouseover="this.style.background='#0088cc'; this.style.transform='scale(1.05)';"
+   onmouseout="this.style.background='#00aaff'; this.style.transform='scale(1)';"
+>
+  <span>⬇ Preuzmi moj CV (PDF)</span>
+  <img src="https://img.icons8.com/ios-filled/24/ffffff/pdf.png" alt="PDF" />
 </a>
+
     </div>
   </section>
   
@@ -297,6 +305,7 @@
   </script>
 </body>
 </html>
+
 
 
 

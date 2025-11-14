@@ -126,18 +126,37 @@
     }
 
     .about-img {
-      border-radius: 50%;
-      width: 150px;
-      height: 150px;
-      object-fit: cover;
-      box-shadow: 0 0 20px rgba(0,0,0,0.5);
-      border: 3px solid var(--accent);
-    }
+  border-radius: 50%;
+  width: 170px;
+  height: 170px;
+  object-fit: cover;
+  border: 3px solid var(--accent);
+
+  /* Glow efekat */
+  box-shadow:
+    0 0 15px rgba(0, 170, 255, 0.8),
+    0 0 35px rgba(0, 170, 255, 0.4),
+    0 4px 25px rgba(0, 0, 0, 0.6);
+
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Efekat kada korisnik pređe mišem preko slike */
+.about-img:hover {
+  transform: scale(1.05);
+  box-shadow:
+    0 0 20px rgba(0, 170, 255, 1),
+    0 0 45px rgba(0, 170, 255, 0.6),
+    0 8px 35px rgba(0, 0, 0, 0.7);
+}
+
 
     .cert-list {
       list-style-type: "🎖 ";
       padding-left: 20px;
     }
+
+
 
     @media (max-width: 600px) {
       nav { flex-wrap: wrap; gap: 10px; }
@@ -164,8 +183,7 @@
   <section id="about">
     <div class="card">
       <div class="about-grid">
-        <img src="https://cdn-icons-png.flaticon.com/512/1999/1999625.png" alt="Nikola" class="about-img" />
-        <div>
+        <img src="nikola.jpg" alt="Nikola" class="about-img" />
           <h1>👋 Zdravo, ja sam Nikola</h1>
           <p>
             Iskusni tehničar sa istorijom rada u oblasti mehaničkog i industrijskog inženjerstva. 
@@ -264,5 +282,7 @@
   </script>
 </body>
 </html>
+
+
 
 
